@@ -68,13 +68,12 @@ snippet mu
 ## Class
 # class
 snippet cl
-	class ${1:`vim_snippets#Filename('$1', 'name')`}
-	{
-	public:
+	class ${1:`vim_snippets#Filename('$1', 'name')`} {
+	    public:
 		$1(${2});
 		~$1();
 
-	private:
+	    private:
 		${0:/* data */}
 	};
 # member function implementation
@@ -89,6 +88,9 @@ snippet ns
 	} /* namespace $1 */
 ##
 ## Input/Output
+# std::cerr
+snippet cerr
+	std::cerr << ${1} << std::endl;
 # std::cout
 snippet cout
 	std::cout << ${1} << std::endl;

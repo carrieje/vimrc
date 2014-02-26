@@ -41,8 +41,7 @@ snippet #if
 	#endif
 # header include guard
 snippet once
-	#ifndef ${1:`toupper(vim_snippets#Filename('$1_H', 'UNTITLED_H'))`}
-
+	#ifndef ${1:`toupper(vim_snippets#Filename('__$1_H__', 'UNTITLED_H'))`}
 	#define $1
 
 	${0}
@@ -235,3 +234,13 @@ snippet gpl
 	 */
 
 	${0}
+snippet flag
+	/************************************************
+	*          ${1:NEW SECTION}
+	***********************************************/
+	$0
+snippet malloc
+	${3:int} *${1:ptr} = ($3*)malloc(${2:size} * sizeof($3));
+	if ( ! $1 ) {
+		${0:/* An error has occured  */}
+	}
